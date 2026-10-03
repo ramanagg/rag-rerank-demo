@@ -153,9 +153,9 @@ if search_button:
                 with st.spinner("Generating answer with Gemini..."):
                     try:
                         system_instruction = (
-                            "You are an enterprise AI assistant. Answer the user question using ONLY "
-                            "the provided context. If the answer cannot be found in the context, say "
-                            "'I cannot find the answer in the provided documents.'"
+                            "You are an enterprise AI assistant. Answer the user question based on the provided context. "
+                            "If the user asks whether a feature, tool, or option is supported and it is not mentioned among the supported list in the context, answer 'No'. "
+                            "If the context is completely unrelated to the question, say 'I cannot find the answer in the provided documents.'"
                         )
                         prompt = f"Context:\n{retrieved_context_str}\n\nUser Question: {user_query}"
 
